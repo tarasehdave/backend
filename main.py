@@ -73,6 +73,7 @@ class GroceryStore:
             for item, price in items.items():
                 print(f"- {item}: ${price:.2f}")
 
+
 # Create a grocery store object
 store = GroceryStore()
 
@@ -93,3 +94,5 @@ store.add_item("Wheat", "Flour", 2.99)
 
 # Display the grocery store inventory
 store.display_inventory()
+
+
