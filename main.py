@@ -73,6 +73,7 @@ class GroceryStore:
             for item, price in items.items():
                 print(f"- {item}: ${price:.2f}")
 
+
 # Create a grocery store object
 store = GroceryStore()
 
@@ -94,6 +95,10 @@ store.add_item("Wheat", "Flour", 2.99)
 # Display the grocery store inventory
 store.display_inventory()
 
+<<<<<<< HEAD
+=======
+\
+    
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
@@ -167,5 +172,6 @@ if __name__ == "__main__":
             break
         else:
             print("Invalid choice. Please enter 'L' to login or 'E' to exit.")
+>>>>>>> 161682f9e9c9939e7bc63f21997ae11de4206bb4
 
 
