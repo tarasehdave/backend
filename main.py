@@ -133,45 +133,33 @@ if __name__ == '__main__':
 
 https://prod.liveshare.vsengsaas.visualstudio.com/join?C87CE6087C8E4A6C7EAE378221D2555A2DC4
 
-import json
+/
 
-# Sample user data (you should use a database for this)
-user_data = {
-    "1234": {
-        "email": "user1@example.com",
-        "username": "user1",
-        "first_name": "John",
-        "last_name": "Doe",
-    },
-    "5678": {
-        "email": "user2@example.com",
-        "username": "user2",
-        "first_name": "Jane",
-        "last_name": "Smith",
-    }
+# Dictionary to store username and password pairs
+user_credentials = {
+    "sharonkodali": "pears",
+    "tarasehdave": "apples",
+    "alishahussain": "trees"
 }
 
-def login():
-    user_id = input("User ID: ")
-    email = input("Email: ")
-    username = input("Username: ")
-    first_name = input("First Name: ")
-    last_name = input("Last Name: ")
-
-    if user_id in user_data and user_data[user_id]["email"] == email and user_data[user_id]["username"] == username and user_data[user_id]["first_name"] == first_name and user_data[user_id]["last_name"] == last_name:
-        print("Login successful!")
+# Function to check if the entered credentials are valid
+def login(username, password):
+    if username in user_credentials and user_credentials[username] == password:
+        return True
     else:
-        print("Login failed. Please check your credentials.")
+        return False
 
-if __name__ == "__main__":
-    while True:
-        choice = input("Do you want to login (L) or exit (E)? ").strip().lower()
-        if choice == "l":
-            login()
-        elif choice == "e":
-            break
-        else:
-            print("Invalid choice. Please enter 'L' to login or 'E' to exit.")
->>>>>>> 161682f9e9c9939e7bc63f21997ae11de4206bb4
+# Main login loop
+while True:
+    print("Please log in:")
+    username = input("Username: ")
+    password = input("Password: ")
+
+    if login(username, password):
+        print("Login successful. Welcome, " + username + "!")
+        break
+    else:
+        print("Invalid credentials. Please try again.")
+
 
 
