@@ -103,12 +103,14 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///grocery_store.db'
 db = SQLAlchemy(app)
 
+# Create class for the order detail
 class OrderDetail(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     OrderID = db.Column(db.String(50), nullable=False)
     GroceryItemID = db.Column(db.String(50), nullable=False)
     ItemCount = db.Column(db.Integer, nullable=False)
 
+# Creates the order detail
 @app.route('/order-details', methods=['POST'])
 def create_order_detail():
     data = request.json
@@ -117,6 +119,7 @@ def create_order_detail():
     db.session.commit()
     return jsonify({'message': 'Order detail created successfully'})
 
+# Collects the order details
 @app.route('/order-details', methods=['GET'])
 def get_order_details():
     order_details = OrderDetail.query.all()
