@@ -95,25 +95,18 @@ store.add_item("Wheat", "Flour", 2.99)
 # Display the grocery store inventory
 store.display_inventory()
 
-<<<<<<< HEAD
-=======
-\
-    
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///grocery_store.db'
 db = SQLAlchemy(app)
-
-# Create class for the order detail
 class OrderDetail(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     OrderID = db.Column(db.String(50), nullable=False)
     GroceryItemID = db.Column(db.String(50), nullable=False)
     ItemCount = db.Column(db.Integer, nullable=False)
 
-# Creates the order detail
 @app.route('/order-details', methods=['POST'])
 def create_order_detail():
     data = request.json
@@ -135,34 +128,6 @@ if __name__ == '__main__':
 
 
 https://prod.liveshare.vsengsaas.visualstudio.com/join?C87CE6087C8E4A6C7EAE378221D2555A2DC4
-
-/
-
-# Dictionary to store username and password pairs
-user_credentials = {
-    "sharonkodali": "pears",
-    "tarasehdave": "apples",
-    "alishahussain": "trees"
-}
-
-# Function to check if the entered credentials are valid
-def login(username, password):
-    if username in user_credentials and user_credentials[username] == password:
-        return True
-    else:
-        return False
-
-# Main login loop
-while True:
-    print("Please log in:")
-    username = input("Username: ")
-    password = input("Password: ")
-
-    if login(username, password):
-        print("Login successful. Welcome, " + username + "!")
-        break
-    else:
-        print("Invalid credentials. Please try again.")
 
 
 
