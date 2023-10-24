@@ -29,7 +29,21 @@ if __name__ == '__main__':
     db.create_all()
     app.run(debug=True)
 
+   # Updates order details when something new is added
+    @app.route('/order-details/<int:order_detail_id>', methods=['PUT'])
+def update_order_detail(order_detail_id):
+    data = request.json
+    order_detail = OrderDetail.query.get(order_detail_id)
 
+    if not order_detail:
+        return jsonify({'error': 'Order detail not found'}), 404
+
+    order_detail.OrderID = data.get('OrderID', order_detail.OrderID)
+    order_detail.GroceryItemID = data.get('GroceryItemID', order_detail.GroceryItemID)
+    order_detail.ItemCount = data.get('ItemCount', order_detail.ItemCount)
+
+    db.session.commit()
+    return jsonify({'message': 'Order detail updated successfully'})
 
 
 
