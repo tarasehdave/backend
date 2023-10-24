@@ -134,7 +134,7 @@ if __name__ == '__main__':
     db.create_all()
     app.run(debug=True)
     
-    # Updates order details if something new is added
+    # Updates order details when something new is added
     @app.route('/order-details/<int:order_detail_id>', methods=['PUT'])
 def update_order_detail(order_detail_id):
     data = request.json
