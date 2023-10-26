@@ -1,3 +1,5 @@
+
+
 # Dictionary to store username and password pairs
 user_credentials = {
     "sharonkodali": "pears",
@@ -5,6 +7,22 @@ user_credentials = {
     "alishahussain": "trees"
     ""
 }
+
+user_data = []
+
+# define data and 
+def initUsers():
+    user_id=0
+    for user in user_credentials:
+        password = user_credentials.get(user)
+        user_data.append({'id':user_id,'user':user,'password':password})
+        user_id+=1
+        
+def getUsers():
+    return(user_data)
+
+def getUser(id):
+    return(user_data[id])
 
 # Function to check if the entered credentials are valid
 def login(username, password):
@@ -24,6 +42,8 @@ while True:
         break
     else:
         print("Invalid credentials. Please try again.")
+        
+
 
 
 
