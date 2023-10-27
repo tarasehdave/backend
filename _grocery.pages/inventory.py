@@ -13,6 +13,7 @@ class GroceryStore:
             print(f"{category}:")
             for item, price in items.items():
                 print(f"- {item}: ${price:.2f}")
+    
 
 
 # Create a grocery store object

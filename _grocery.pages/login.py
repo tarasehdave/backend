@@ -10,7 +10,7 @@ user_credentials = {
 
 user_data = []
 
-# define data and 
+# define data and
 def initUsers():
     user_id=0
     for user in user_credentials:

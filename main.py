@@ -1,6 +1,4 @@
 import threading
-
-
 # import "packages" from flask
 from flask import render_template  # import render_template from "public" flask libraries
 
@@ -9,7 +7,6 @@ from __init__ import app,db  # Definitions initialization
 from model.jokes import initJokes
 from model.users import initUsers
 from model.players import initPlayers
-from model.users import getUsers
 
 # setup APIs
 from api.covid import covid_api # Blueprint import api definition
@@ -51,9 +48,7 @@ def activate_job():  # activate these items
     initUsers()
     initPlayers()
 
-@app.route('/users')
-def lko():
-    getUsers()
+@app.route('/login', methods=['POST'])
 
 # this runs the application on the development server
 if __name__ == "__main__":
