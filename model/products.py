@@ -12,7 +12,7 @@ product_list = [
     "Chicken",
     "Pear",
     "Salad",
-    "Tomato"
+    "Tomato",
     "Brown Bread",
     "White Bread",
     "Tortilla",
@@ -24,7 +24,6 @@ product_list = [
     "Cabbage",
     "Potatoes",
     "Mushroom"
-    ""
 ]
 
 category_list = [
@@ -53,22 +52,31 @@ category_list = [
     "Vegtable",
     "Vegtable",
 
-    ''
-
 ]
 
-def initProducts(): 
-    product_id = 0 
-    for product in product_list: 
-        products_data.append({"id": product_id, "product": product, "category": "$1.00"})
+def initProducts():
+    product_id = 1
+    for product, category in zip(product_list, category_list):
+        products_data.append({"id": product_id, "product": product, "category": category})
         product_id += 1
-    
 
+    
 #Get function: returns all data
 def getProducts(): 
     return(products_data)
 
 
 #Get function: returns product by id
-def getProduct(category):
-    return(products_data[id])
+def getProductsByCategory(category):
+    matching_products = []
+    for product_data in products_data:
+        if product_data["category"] == category:
+            matching_products.append(product_data)
+    return matching_products
+
+
+if __name__ == "__main__": 
+    initProducts()  # initialize jokes
+    getProducts() # return product data after initialization
+    
+   

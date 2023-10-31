@@ -21,7 +21,8 @@ joke_list = [
     "Q: How many programmers does it take to change a light bulb? A: None. It’s a hardware problem.",
     "The programmer got stuck in the shower because the instructions on the shampoo bottle said: Lather, Rinse, Repeat.",
     "Q: What is the biggest lie in the entire universe? A: I have read and agree to the Terms and Conditions.",
-    'An SQL statement walks into a bar and sees two tables. It approaches, and asks may I join you?'
+    'An SQL statement walks into a bar and sees two tables. It approaches, and asks may I join you?',
+    "TEST"
 ]
 
 # Initialize jokes

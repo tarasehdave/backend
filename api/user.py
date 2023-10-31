@@ -13,7 +13,7 @@ api = Api(user_api)
 
 class UserAPI:        
     class _CRUD(Resource):  # User API operation for Create, Read.  THe Update, Delete methods need to be implemeented
-        def post(self): # Create method
+        def listen(self): # Create method
             ''' Read data for json body '''
             body = request.get_json()
             
@@ -36,14 +36,9 @@ class UserAPI:
             
             ''' Additional garbage error checking '''
             # set password if provided
-            if password is not None:
-                uo.set_password(password)
+            
             # convert to date type
-            if dob is not None:
-                try:
-                    uo.dob = datetime.strptime(dob, '%Y-%m-%d').date()
-                except:
-                    return {'message': f'Date of birth format error {dob}, must be mm-dd-yyyy'}, 400
+            
             
             ''' #2: Key Code block to add user to database '''
             # create user in database
@@ -64,5 +59,6 @@ class UserAPI:
 
     # building RESTapi endpoint
     api.add_resource(_CRUD, '/')
+    
    
     
