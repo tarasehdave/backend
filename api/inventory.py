@@ -367,7 +367,7 @@ if __name__ == "__main__":
         except:
             print("unknown error")
 
-# Initialize the Flask app and start the server 
+# Initialize the Flasks app and start the server 
 InitInvent_app()
 
 
