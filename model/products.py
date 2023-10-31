@@ -66,7 +66,7 @@ def getProducts():
     return(products_data)
 
 
-#Get function: returns product by id
+#Get function: retuns product by id
 def getProductsByCategory(category):
     matching_products = []
     for product_data in products_data:

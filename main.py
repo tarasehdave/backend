@@ -56,7 +56,7 @@ def activate_job():  # activate these items
     initProducts()
 
 
-# this runs the application on the development server
+# this run the application on the development server
 
 if __name__ == "__main__":
     # change name for testing

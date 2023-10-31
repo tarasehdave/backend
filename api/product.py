@@ -17,7 +17,7 @@ class ProductsAPI:
         def get(self):
             return jsonify(getProducts())
     
-    # getProduct
+    # getProducts
     class _ReadCategory(Resource): 
         def get(self, category):
             return jsonify(getProductsByCategory(category))
