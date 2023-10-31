@@ -12,7 +12,7 @@ inventory_api = Blueprint('inventory_api', __name__,
 
 api = Api(inventory_api)
 
-# Categories list - this will be entered in dynamodb
+# Categories lists - this will be entered in dynamodb
 # and additional fields like description, images etc will be included
 categories = [{
     "cid": "1",

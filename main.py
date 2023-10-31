@@ -15,6 +15,8 @@ from api.joke import joke_api # Blueprint import api definition
 from api.user import user_api # Blueprint import api definition
 from api.player import player_api
 from api.product import product_api
+from api.inventory import inventory_api
+
 
 
 # setup App pages
@@ -31,6 +33,7 @@ app.register_blueprint(user_api) # register api routes
 app.register_blueprint(player_api)
 app.register_blueprint(app_projects) # register app pages
 app.register_blueprint(product_api)
+app.register_blueprint(inventory_api)
 
 @app.errorhandler(404)  # catch for URL not found
 def page_not_found(e):

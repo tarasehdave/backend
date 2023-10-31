@@ -93,6 +93,5 @@ if __name__ == "__main__":
         print(response)
         try:
             print(response.json())
-            print("TEST")
         except:
             print("unknown error")
