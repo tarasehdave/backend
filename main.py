@@ -49,7 +49,7 @@ def index():
 def table():
     return render_template("table.html")
 
-@app.before_first_request
+# @app.before_first_request
 def activate_job():  # activate these items 
     initJokes()
     initUsers()
