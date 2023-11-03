@@ -1,0 +1,7 @@
+<!-- Extending the project layout, as this file will do minor customizations -->
+{% extends "layouts/project.html" %}
+
+{% block background %}
+    <script src="{{ url_for('static', filename='js/client.js') }}"></script>
+    <button type="submit" onclick="addToCart()">Search</button>
+{% endblock %}

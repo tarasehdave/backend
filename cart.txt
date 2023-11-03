@@ -1,0 +1,1 @@
+{"cart_items": {"fruits": [{"pid": 1, "qty": 1}, {"pid": 2, "qty": 22}]}}
